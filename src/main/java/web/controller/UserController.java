@@ -53,10 +53,4 @@ public class UserController {
         userService.delete(id);
         return "redirect:/users";
     }
-
-    @PostMapping(value = "{/delete")
-    public String isExistById(@PathVariable User user) {
-        userService.delete(user.getId());
-        return "redirect:/users";
-    }
 }
