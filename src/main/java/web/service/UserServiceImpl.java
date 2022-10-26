@@ -7,7 +7,6 @@ import web.model.User;
 import java.util.List;
 
 @Component
-@Transactional(readOnly = true)
 public class UserServiceImpl implements UserService {
 
     private final UserDao userDao;
@@ -28,8 +27,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User show(int id) {
-        return userDao.show(id);
+    public User getUser(int id) {
+        return userDao.getUser(id);
     }
 
     @Override
@@ -42,11 +41,5 @@ public class UserServiceImpl implements UserService {
     @Transactional
     public void delete(int id) {
         userDao.delete(id);
-    }
-
-    @Override
-    @Transactional
-    public User isExistById(User user) {
-        return userDao.isExistById(user);
     }
 }

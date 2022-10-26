@@ -6,8 +6,7 @@ public interface UserDao {
 
     List<User> getAllUsers();
     void save(User user);
-    User show(int id);
+    User getUser(int id);
     void update(int id, User updateUser);
     void delete(int id);
-    User isExistById(User user);
 }
